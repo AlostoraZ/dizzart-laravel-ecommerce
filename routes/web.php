@@ -26,7 +26,7 @@ Route::post('/cart/{product}/add', [CartController::class, 'add'])->name('cart.a
 Route::patch('/cart/{product}', [CartController::class, 'update'])->name('cart.update');
 Route::delete('/cart/{product}', [CartController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/promo', [CartController::class, 'applyPromo'])->name('cart.promo.apply');
-Route::delete('/cart/promo', [CartController::class, 'removePromo'])->name('cart.promo.remove');
+Route::delete('/cart/promo/remove', [CartController::class, 'removePromo'])->name('cart.promo.remove');
 
 Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CartController::class, 'showCheckout'])->name('checkout.show');
